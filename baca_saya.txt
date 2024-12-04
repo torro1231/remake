@@ -1,0 +1,8 @@
+Username & Password
+Type         	Username	Password      
+Admin 		    TorroTech  		123
+Admin Pegawai	TorroPeg	    123
+Admin Absen	    TorroAbs		123
+User		    TorroUser       123
+Kabag		    TorroKabag      123
+Manager         TorroMan		123

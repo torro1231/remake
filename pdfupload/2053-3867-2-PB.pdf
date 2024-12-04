@@ -1,0 +1,307 @@
+     PERANCANGAN DAN PEMBUATAN APLIKASI
+
+PERHITUNGAN HARGA POKOK PRODUKSI DENGAN
+
+       METODE JOB ORDER COSTING PADA PT.X
+
+   Chandra Kusuma Putra Harijono1 , Alexander Setiawan2, Djoni Haryadi Setiabudi3
+
+           Program Studi Teknik Informatika, Fakultas Teknologi Industri, Universitas Kristen Petra
+                                          Jl. Siwalankerto 121-131 Surabaya 60236
+                                                        Telp. (031) 8418463
+
+E-mail: chandrakusuma15@yahoo.com1, alexander@petra.ac.id2, djonihs@petra.ac.id3
+
+ABSTRAK                                                            Keywords
+
+PT.X adalah sebuah perusahaan yang bergerak dibidang               Cost of Goods Manufactured, Job Order Costing, Slipper
+produksi dan pendistribusian sandal. Pada saat ini pencatatan      Factory,
+yang ada pada PT.X masih bersifat manual. Perhitungan harga
+pokok produksi juga dilakukan secara manual, dalam                 1 PENDAHULUAN
+perhitungan harga pokok produksi, yang dihitung hanyalah
+biaya bahan baku saja. Dari permasalahan harga pokok produksi      PT. X merupakan sebuah Pabrik usaha keluarga yang telah
+tersebut, akan menyebabkan kesulitan dalam menghitung              berdiri sejak 2011. PT. X berletak di Surabaya, Jawa Timur
+keuntungan dan kerugian perusahaan. Berdasarkan                    telah mendisitribusikan sandalnya hampir ke seluruh Indonesia
+permasalahan tersebut, maka dirancang sebuah sistem yang           hingga saat ini. Setiap melakukan produksi, bahan baku yang
+dapat membantu perhitungan harga pokok produksi . proses           digunakan selalu tidak sesuai dengan yang diperhitungkan
+perancangan sistem dimulai dari beberapa tahap, dimulai dengan     menyebabkan kesulitan dalam menghitung stok dengan tepat.
+survey ke perusahaan untuk menganalisa proses produksi sandal,     Dari proses produksi yang ada dapat disimpulkan bahwa
+analisa data yang ada dan merancang Data Flow Diagram dan          perhitungan ukuran panjang dan lebar kulit yang digunakan
+Entity Relationship Diagram dari aplikasi yang akan dibuat .       menjadi tidak pasti. Perhitungan laba dan rugi tidak akan presisi
+Proses pembuatan menggunakan Microsoft Visual Studio .NET          ketika bahan baku yang dikeluarkan tidak sesuai dengan yang
+2010 dan database SQLServer 2012. Hasil dari aplikasi ini          digunakan karena akan banyak sisa-sisa bahan baku yang
+adalah pencatatan seluruh data yang berkaitan dengan proses        terbuang yang merupakan sisa dari pemotongan. Selain itu
+produksi, pembelian bahan baku, penjualan sandal, perhitungan      Pelaksanaan stok opname bahan baku dilaksanakan secara
+harga pokok produksi secara otomatis dan juga kartu stok yang      langsung saat melakukan pembelian bahan baku dan
+terupdate secara otomatis.                                         penghitungan sisa bahan baku dilakukan setiap akhir bulan.
+                                                                   Tidak jarang ada sejumlah bahan baku yang hilang dari gudang
+Kata Kunci                                                         karena kurang telitinya pelaksanaan stok opname bahan baku
+                                                                   dan juga banyak bahan baku yang kadaluarsa sehingga
+Harga Pokok Produksi, Job Process Costing, Pabrik Sandal           mengakibatkan bahan baku tersebut tidak dapat digunakan untuk
+                                                                   membuat sandal baru. Di samping itu, sistem perusahaan yang
+ABSTRACT                                                           lama dirasa akan sangat menyulitkan untuk dapat menghasilkan
+                                                                   laporan yang cukup detail dan akurat setiap harinya hal itu
+PT.X is a company engaged in the production and distribution       disebabkan karena data-data yang dimasukkan secara manual
+of slippers. At this time the recording of Data in PT.X is still   tidak masih dapat menyebabkan kesalahan perhitungan dan lain
+manual. The calculation of the cost of production is also done     sebagainya.
+manually, in the calculation of cost of production, which is
+calculated only the cost of materials only. Of the problems the    2 LANDASAN TEORI
+cost of production, will lead to difficulties in calculating the   2.1 Akuntansi Biaya
+profits and losses of the company. Based on these problems,
+then designed a system that can help the calculation of the cost   Akuntansi biaya adalah proses pencatatan, penggolongan,
+of production. system design process starts from a number of       peringkasan dan penyajian biaya pembuatan dan penjualan
+stages, beginning with a survey to the company to analyze the      produk atau jasa, dengan cara-cara tertentu, serta penafsiran
+slippers production process, analysis of existing data and         terhadapnya. Proses pencatatan, penggolongan, peringkasan dan
+designing the Data Flow Diagram and Entity Relationship            penyajian, serta penafsiran informasi biaya adalah tergantung
+Diagram of the application to be made. The process of making       untuk siapa proses tersebut ditujukan. Proses akuntansi biaya
+use of Microsoft Visual Studio. NET 2010 and SQLServer 2012        dapat ditujukan pula untuk memenuhi kebutuhan pemakai dalam
+database. The results of this application is the recording of all  perusahaan. Untuk memenuhi tujuan penentuan harga pokok
+data related to the production process, raw material purchase,     produksi, akuntansi biaya mencatat, menggolongkan, dan
+sale sandals, calculating the cost of production is automated and  meringkas biaya-biaya pembuatan produk atau penyerahan jasa.
+also card stock that is updated automatically.                     Biaya yang dikumpulkan dan disajikan adalah biaya yang telah
+                                                                   terjadi di masa yang lalu atau biaya historis. Akuntansi biaya
+                                                                   berfungsi untuk mengukur pengorbanan nilai masukan tersebut
+                                                                   guna menghasilkan informasi bagi manajemen yang salah satu
+manfaatnya adalah untuk mengukur apakah kegiatan usahanya        Tenaga kerja langsung adalah tenaga kerja yang langsung
+menghasilkan laba atau sisa hasil usaha tersebut.[1]             terlibat dalam proses produksi serta dapat ditelusuri dengan
+                                                                 mudah terhadap produk yang dihasilkan dan merupakan tenaga
+2.2 Manfaat Akuntansi Biaya                                      kerja utama untuk menghasilkan suatu produk. Biaya tenaga
+                                                                 kerja langsung (direct labor) adalah upah untuk kompensasi
+tujuan atau manfaat akuntansi biaya adalah menyediakan salah     yang dibayarkan kepada tenaga kerja langsung yang bekerja
+satu informasi yang diperlukan manajemen dalam mengelola         dibagian produksi.
+perusahaan, yaitu informasi biaya yang bermanfaat untuk:         c. Biaya overhead pabrik
+a. Perencanaan dan pengendalian biaya                            Biaya overhead pabrik (factory overhead cost) adalah biaya
+b. Penentuan harga pokok produk atau jasa yang dihasilkan        produksi selain biaya bahan baku dan biaya tenaga kerja
+                                                                 langsung yang terdiri dari berbagai macam biaya yang tidak
+    perusahaan dengan tepat dan teliti                           dapat ditelusuri seluruhnya kepada produk atau aktivitas lainnya
+c. Pengambilan keputusan oleh manajemen                          dalam upaya perusahaan untuk merealisasi pendapatan. Biaya
+Untuk memenuhi tujuan penentuan harga pokok produksi,            overhead dapat digolongkan menjadi :
+akuntansi biaya mencatat, menggolongkan, dan meringkas            Biaya bahan penolong
+biaya-biaya pembuatan produk atau penyerahan jasa. Biaya yang
+dikumpulkan dan disajikan adalah biaya yang telah terjadi di           Biaya bahan penolong (indirect material) adalah biaya
+masa yang lalu atau biaya historis. Akuntansi biaya berfungsi          bahan yang di olah menjadi bagian dari produksi tapi
+untuk mengukur pengorbanan nilai masukan tersebut guna                 kadang – kadang sulit untuk diidentifikasi keberadaanya
+menghasilkan informasi bagi manajemen yang salah satu                  pada produk yang dihasilkan. Dengan kata lain biaya bahan
+manfaatnya adalah untuk mengukur apakah kegiatan usahanya              penolong merupakan biaya bahan baku penunjang agar
+menghasilkan laba atau sisa hasil usaha tersebut.[2]                   produk yang dihasilkan lebih sempurna.
+                                                                  Biaya tenaga kerja tidak langsung
+2.3 Harga Pokok Produksi                                               Biaya tenaga kerja tidak langsung (indirect labor) adalah
+                                                                       balas jasa yang diberikan kepada karyawan pabrik, akan
+“Harga pokok produksi (HPP) adalah aktiva atau jasa yang               tetapi manfaatnya tidak dapat diidentifikasikan atau diikuti
+dikorbankan atau diserahkan dalam proses produksi yang                 jejaknya pada produk tertentu yang dihasilkan perusahaan.
+meliputi biaya bahan baku, biaya tenaga kerja, biaya overhead     Penyusutan dan amortisasi aktiva tetap pabrik
+pabrik dan termasuk biaya produksi “.[3]                          Reparasi dan pemeliharaan aktiva tetap pabrik
+                                                                       Merupakan biaya suku cadang, biaya bahan baku habis
+2.4 First in First out                                                 pakai dan harga perolehan jasa dari pihak luar perusahaan.
+                                                                       Untuk perbaikan dan pemeliharaan gedung, bangunan
+Metode FIFO, first in, first out atau masuk pertama, keluar            pabrik, mesin- mesin dan aktiva lainnya yang digunakan
+pertama dapat digunakan untuk memperhitungkan biaya                    untuk keperluan pabrik.
+persediaan awal barang dalam proses kalkulasi biaya proses.       Biaya listrik, air pabrik
+Dalam metode ini, biaya persediaan awal barang dalam proses       Biaya overhead lain – lain
+dipisahkan dari biaya yang ditambahkan pada periode berjalan,
+dan tidak dirata-ratakan dengan biaya tambahan baru. Prosedur    2.6 Data Flow Diagram (DFD)
+ini menghasilkan dua angka biaya per unit, yakni (1) persediaan
+awal barang dalam proses yang diselesaikan, dan (2) unit yang    Data Flow Diagram (DFD) adalah sebuah alat model yang
+dimulai dan diselesaikan dalam periode yang sama. Biaya untuk    digunakan untuk menggambar sistem sebagai suatu jaringan
+menyelesaikan unit – unit dalam proses awal periode dihitung     proses yang dihubungkan antara satu dengan yang lainnya
+terlebih dahulu, yang kemudian diikuti perhitungan biaya unit –  dengan menggunakan alur data sebagai penghubung. DFD dapat
+unit yang dimulai dan diselesaikan dalam periode tersebut.       dibagi menjadi beberapa level untuk menggambarkan
+Pengaruh penggunaan metode FIFO adalah persediaan akhir          kompleksitas data secara lebih jelas[6].
+dinilai menurut perkembangan harga terakhir dan menggunakan
+harga terdahulu untuk menentukan harga pokok penjualan. Pada     2.7 Entity Relationship Diagram (ERD)
+periode dimana harga – harga meningkat terus, metode FIFO
+menghasilkan laba bersih yang tinggi. Satu – satunya alasan      Entity relationship diagram (ERD) adalah sebuah teknik grafis
+terhadap hasil ini karena perusahaan dagang selalu               yang menggambarkan sebuah skema database. ERD juga disebut
+meningkatkan harga jual barang apabila harga beli barang naik,   sebagai diagram E-R karena di dalamnya menampilkan berbagai
+walaupun persediaan barang tersebut dibeli sebelum kenaikan      macam jenis entitas dan hubungan antara satu sama yang lain.
+harga. Pengaruh sebaliknya terjadi apabila harga menurun.[4]     Sebuah entitas dibutuhkan disetiap perusahaan untuk
+                                                                 mengumpulkan dan menyimpan informasi[6].
+2.5 Pengertian Biaya Produksi
+                                                                 3 ANALISIS SISTEM
+Biaya produksi atau biaya pabrik adalah biaya untuk mengolah     3.1 Sistem Pembelian Bahan Baku
+bahan baku menjadi barang atau produk jadi, yang terdiri dari 3
+elemen biaya, yaitu bahan langsung, tenaga kerja, dan overhead   Pembelian bahan baku biasanya dilakukan pada saat bahan baku
+pabrik[5].                                                       menipis, dimulai pada bagian gudang melakukan pemesanan ke
+a. Biaya bahan baku                                              supplier. Supplier akan mengecek stok bahan baku mereka. Jika
+Biaya bahan baku (direct material) adalah biaya yang memiliki    bahan baku tersedia maka akan langsung dilakukan pengepakan
+porsi besar dalam rangka menghasilkan suatu jenis output.        dan pengiriman bahan baku dikemudian harinya. Setelah barang
+Bahan baku yang diolah dalam perusahaan industri dapat           dikirimkan maka bagian gudang akan mengecek apakah barang
+diperoleh dari pembelian atau pengolahan sendiri.                yang dikirimkan sudah benar, apabila barang sudah benar maka
+b. Biaya tenaga kerja langsung                                   akan dilakukan pembayaran. Apabila bahan baku yang
+diinginkan tidak tersedia, maka akan diinfokan ke PT. X, seperti                                    Penjualan Sandal
+yang Ditampilkan pada Gambar 1.                                                                                     Customer
+
+                                                                                                                           Start                    Kantor                             Gudang
+
+       Gudang Bahan Baku               Pemesanan Bahan Baku                                                                                                                                        Terima
+                                                                 Supplier                                                                                                                        Job Order
+
+       Start                                                                                        Pesan Sandal                  Datang Ke Kantor  Dealing                                        Kemas
+
+        Memesan           Cek bahan                Barang siap?  siap      Membuat  Membuat         Melalui Telepon
+       bahan baku            baku                                             Nota  surat jalan
+                                                                                                           Pilih
+         melalui                                                                                          Model
+         telepon
+
+                                                                                                                                                    Work Order
+
+          Menerima                     Tidak Siap                                2                  Dealing
+          Konfirmasi                                                       Nota 1
+
+           Nota 1         Lunas                    Lunas?
+
+       Terima Bahan                                                                                                                                 Delivery Order
+         baku dan
+         surat jalan                               Tidak Lunas                         Surat Jalan
+                                                      Nota 1                        Kirim
+           Tanda
+       tangan surat         Terima                                                                  Terima
+                          surat jalan                                                               Sandal
+            jalan
+                                                                                                                                                                    Bukti Pengeluaran         Surat Jalan
+                                                                                                                                                                     Barang Gudang
+
+                          END
+
+                                                                                                                                                                                       Kirim
+
+Phase                                                                                                                     Gambar 2 Proses Penjualan
+
+                      Gambar 1 Proses Pembelian                                                     3.3 Sistem Produksi
+
+3.2 Sistem Penjualan Sandal                                                                         Untuk melakukan produksi, owner akan memberikan surat
+                                                                                                    perintah kerja kepada para karyawan bagian produksi untuk
+Penjualan menu dimulai dari customer memilih sendiri sandal                                         melakukan produksi, kemudian pekerja akan order bahan baku
+yang ada di catalog. customer dapat langsung datang ke kantor                                       kepada bagian gudang. Bagian gudang akan mengecek apakah
+untuk memilih sandal yang diinginkan atau dapat melakukan                                           bahan baku yang diminta tersedia. Apabila bahan baku tersedia
+order via telepon. Setelah memilih model sandal dan mencapai                                        maka akan segera mengirimkan bahan baku kepada para
+kesepakatan antara penjual dan pembeli, maka penjual akan                                           pekerja, apabila bahan baku tidak tersedia maka bagian gudang
+membuat work order yang akan diserahkan ke gudang                                                   akan mengirimkan permohonan pembelian bahan baku kepada
+pembuatan sandal. Pada saat gudang menyiapkan dan mengemas                                          owner. Setelah menerima bahan baku maka para pekerja akan
+sandal yang dipesan, kantor akan membuat delivery order yang                                        segera melaksanakan produksi dan menyimpan barang hasil
+akan diserahkan kepada bagian pengiriman. setelah barang                                            produksi di gudang barang jadi. Untuk sistem produksi dapat
+dikemas dan dikirimkan maka gudang akan membuat laporan                                             dilihat pada Gambar 3.
+barang keluar dan surat jalan yang akan dikirimkan bersama
+sandal dan delivery order kepada pembeli sandal. Dapat
+diperhatikan pada Gambar 2
+Title
+
+       Owner                Pekerja                          Gudang
+
+       Start               List sandal yang  Bahan baku yang
+                          akan diproduksi        dibutuhkan
+       Memberikan SPK
+                         Mengambil bahan     Memeriksa stok
+       List sandal yang            baku          bahan baku
+           diproduksi
+                         Bahan baku yang
+                              dibutuhkan                                                                    Gambar 6 Form Login
+
+                           Menerima bahan      Bahan baku ada?       Tidak         5.1 Form Bahan Baku
+                                     baku
+                                                           ya                      Menu ini digunakan untuk menambahkan data bahan baku,
+                         Melakukan produksi                                        Apabila user ingin menambahkan data bahan baku, user harus
+                                             Memberikan bahan                      memasukkan data – data yang diminta. Setelah user menekan
+                         Menyimpan barang                baku                      tombol Simpan, maka data akan tersimpan ke dalam database,
+                                 di gudang                                         seperti pada Gambar 7. Contoh data yang dimasukkan oleh user
+                                                                Meminta pengadaan  adalah nama “Kulit” Dan satuan besar “Meter Persegi”.
+                                                                       bahan baku
+
+        Menerima data
+       bahan baku yang
+
+           dibutuhkan
+
+                                                                Bahan baku yang
+                                                                    dibutuhkan
+
+                         End
+
+Phase
+
+                       Gambar 3 Proses Produksi                                                     Gambar 7 Form Bahan Baku
+
+4 DESAIN SISTEM                                                                    5.2 Form SPK
+
+Context Diagram Menggambarkan sistem perusahaan serta                              Pada form SPK user dapat menambahkan pesanan dari
+keluar masuknya data secara menyeluruh dengan didukung                             customer, dalam 1 SPK hanya bisa menampung 1 jenis
+sistem Perhitungan Harga Pokok Produksi pada PT.X. Pihak-                          barang untuk diproduksi. Form SPK dapat dilihat pada
+Pihak yang terlibat di dalam sistem ini adalah Owner, Customer                     Gambar 8
+dan Supplier. Desain Sistem Menggunakan DFD dan ERD [6].
+Context Diagram dapat dilihat pada Gambar 4. Sedangkan                                                       Gambar 8 Form SPK
+desain database dapat dilihat pada Gambar 5.
+                                                                                   5.3 Form Produksi Pesanan
+5 IMPLEMENTASI DAN PENGUJIAN
+     SISTEM                                                                        Pada Form ini user dapat melakukan produksi bedasarkan SPK
+                                                                                   yang sudah ada. Dalam form ini terdapat 2 sub menu yaitu:
+Aplikasi dibuat menggunakan Bahasa Pemrograman                                     1. cari SPK berdasarkan nama barang yang dipesan
+Visual Basic. NET 2010 dan Database menggunakan                                    2. menambahkan Bill of Material untuk proses produksi
+SQLServer 2012. Pada saat program pertama kali                                     Form produksi pesanan dapat dilihat pada Gambar 9.
+dijalankan, form yang pertama kali muncul adalah form
+login. Form ini digunakan untuk dapat mengakses menu
+utama. Untuk dapat masuk ke dalam menu utama, user
+harus terlebih dahulu memasukkan username dan
+password dengan benar. Form login dapat dilihat pada
+Gambar 6.
+                      Gambar 4 Context Diagram
+Gambar 5 Entity Relationship Diagram – Conceptual Data Model
+                       Gambar 9 Form Produksi                  7 Daftar Pustaka
+
+5.4 Form Laporan                                               [1] Mulyadi. (2009). Akuntansi Biaya, Edisi ke-5 cetakan
+                                                                      kesembilan, Penerbit UPP-STIM YKPN, Yogyakarta.
+Pada Form Laporan User dapat melihat semua penjualan yang
+terjadi dalam sistem. Form Laporan dapat diliha pada Gambar    [2] Romney, M.B. & Steinbart, P.J. (2012). Accounting
+10.                                                                   information system. New Jersey : Prentice Hall.
+
+                                                               [3] Supriyono, RA. (2010). Akuntansi biaya: Pengumpulan
+                                                                      biaya dan penentuan harga pokok (buku 1) (2nd ed.),
+                                                                      Yogyakarta: BPFE.
+
+                                                               [4] Carter,William K. (2009). Akuntansi Biaya. Edisi 14.
+                                                                      Salemba Empat: Jakarta
+
+                                                               [5] Weygandt, Jerry J., Kieso, Donald E. & Kimmel,Paul D.
+                                                                      (2012). Accounting Principles Eleventh Edition. John
+                                                                      Wiley & Sons,Inc.
+
+                                                               [6] Whitten, J., Bentley, R. & Dittman, K. (2007). System
+                                                                      Analysis and Design Methods (6th Ed). New York:
+                                                                      McGraw-Hill.
+
+                    Gambar 10 Laporan Penjualan
+
+6 Kesimpulan dan Saran
+6.1 Kesimpulan
+
+Dari hasil perancangan dan pembuatan sistem harga pokok
+produksi ini, dapat diambil kesimpulan sebagai berikut :
+1. Menu yang disediakan pada aplikasi ini sudah memenuhi
+
+    kebutuhan yang dibutuhkan oleh perusahaan.
+2. Data yang dihasilkan oleh aplikasi ini sudah sangat akurat
+
+    sehingga sangat membantu user dalam melakukan
+    pencatatan maupun meng-input data-data pembelian,
+    penjualan maupun produksi.
+3. Data yang dihasilkan oleh aplikasi ini sudah sangat akurat
+    sehingga sangat membantu user dalam mencatat maupun
+    meng-input data – data pembelian, penjualan, maupun
+    produksi.
+4. Sistem dapat melakukan pencatatan administrasi perusahaan
+    yang meliputi pembelian bahan baku, penjualan roti, dan
+    penyesuaian stok sehingga perusahaan dapat mengontrol
+    pemasukan, pengeluaran dan perubahan stok yang terjadi.
+
+6.2 Saran
+
+Saran yang diberikan untuk pengembangan program lebih lanjut
+Antara lain :
+1. Desain Interface yang lebih baik dan menarik sehingga
+
+    penggunaan aplikasi ini lebih menarik untuk digunakan.
+2. Sistem Informasi Akuntansi dibuat lebih mendetail dan
+
+    lengkap sehingga semua biaya yang terjadi di perusahaan
+    dapat ditelusuri dengan lebih rinci.
+

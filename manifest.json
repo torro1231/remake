@@ -1,0 +1,57 @@
+{
+  "short_name": "Sistem Kepegawaian",
+  "name": "Aplikasi Kepegawaian",
+  "description": "Aplikasi Sistem Absensi Online Berbasis Auto Detect Lokasi. Pencatatan absen dengan serta mendeteksi lokasi pengguna saat mengisi absensi online.",
+  "icons": [
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/sisteminformasi/premium/AbsensiOnlineV1/content/logo/absensionline512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/sisteminformasi/premium/AbsensiOnlineV1/",
+  "display": "standalone",
+  "theme_color": "#00B4FF",
+  "background_color": "#ffffff",
+  "scope": "/"
+}
